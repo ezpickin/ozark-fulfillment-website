@@ -1,0 +1,127 @@
+/* ============================================
+   Ozark Fulfillment — global styles
+   Palette derived from the badge logo:
+   navy ring, silver eagle, green hills, sky/water blues
+   ============================================ */
+
+:root {
+  --navy-900: #142438;
+  --navy-800: #1b3252;
+  --navy-700: #24466e;
+  --sky: #a9d2e8;
+  --sky-light: #e8f3fa;
+  --green: #3a7d3a;
+  --green-dark: #2c5f2c;
+  --water: #2170b8;
+  --silver: #c6ccd4;
+  --ink: #1a2733;
+  --ink-soft: #46586a;
+  --bg: #ffffff;
+  --bg-alt: #f4f8fb;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(20, 36, 56, 0.10);
+  --shadow-lg: 0 8px 28px rgba(20, 36, 56, 0.16);
+  --font: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* offset anchor targets below the sticky header */
+  scroll-padding-top: 84px;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--water);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+section {
+  padding: 4.5rem 0;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--navy-800);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.section-lede {
+  color: var(--ink-soft);
+  max-width: 42rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--green-dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* circular crop for the badge logo (source PNG has a white margin) */
+.logo-badge {
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logo-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.12);
+}

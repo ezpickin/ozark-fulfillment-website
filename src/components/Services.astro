@@ -1,0 +1,119 @@
+---
+const services = [
+  {
+    icon: '🚛',
+    title: 'Receiving & Shipping',
+    body: 'Pallets, floor-loaded containers (20′ and 40′), and carton forwarding — unloaded, counted, and put away fast, with any discrepancies reported to you same day.',
+  },
+  {
+    icon: '🏭',
+    title: 'Storage',
+    body: 'Clean, organized racked storage with real-time inventory visibility. Pay only for the space you actually use.',
+  },
+  {
+    icon: '📦',
+    title: 'DTC Fulfillment',
+    body: 'Fast, accurate pick, pack, and ship for your Shopify, TikTok Shop, and marketplace orders — with careful packaging your customers notice.',
+  },
+  {
+    icon: '🏷️',
+    title: 'Marketplace & FBA Prep',
+    body: 'SKU labeling (individual or bulk), polybagging, bundling, and case prep to Amazon and Walmart spec, so your shipments check in without issues.',
+  },
+  {
+    icon: '🧰',
+    title: 'Value-Added Services',
+    body: 'Kitting, assortments, bubble wrap, repacking, and custom projects. If it needs hands-on work before it ships, we handle it — priced transparently.',
+  },
+];
+---
+
+<section class="services" id="services">
+  <div class="container">
+    <h2 class="section-title">Everything between your supplier and your customer</h2>
+    <p class="section-lede">
+      One warehouse, one point of contact, every service your inventory needs.
+    </p>
+    <div class="grid">
+      {
+        services.map((s) => (
+          <article class="card">
+            <div class="icon" aria-hidden="true">{s.icon}</div>
+            <h3>{s.title}</h3>
+            <p>{s.body}</p>
+          </article>
+        ))
+      }
+      <article class="card card-cta">
+        <h3>Something else?</h3>
+        <p>
+          Odd-sized freight, returns processing, special projects — ask us. If we can do it
+          well, we'll quote it.
+        </p>
+        <a href="#quote" class="btn btn-primary">Ask About Your Project</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    background: var(--bg);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--bg-alt);
+    border: 1px solid #e2ebf2;
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .card h3 {
+    color: var(--navy-800);
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .card-cta {
+    background: var(--navy-800);
+    border-color: var(--navy-700);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .card-cta h3 {
+    color: #fff;
+  }
+
+  .card-cta p {
+    color: #d4e2ee;
+  }
+
+  .card-cta .btn {
+    margin-top: auto;
+  }
+</style>

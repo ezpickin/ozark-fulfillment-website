@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+const title = 'Ozark Fulfillment — 3PL Warehousing & Fulfillment in Houston, MO';
+const description =
+  'Owner-operated 3PL in the Missouri Ozarks. Receiving, storage, DTC fulfillment, marketplace & FBA prep, and value-added services for e-commerce brands. Get a quote today.';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="canonical" href="https://ozarkfulfillment.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://ozarkfulfillment.com/" />
+    <meta property="og:image" content="https://ozarkfulfillment.com/logo.png" />
+    <meta name="twitter:card" content="summary" />
+
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'LocalBusiness',
+        name: 'Ozark Fulfillment',
+        description:
+          'Third-party logistics (3PL) warehouse offering receiving, storage, DTC fulfillment, marketplace prep, and value-added services.',
+        url: 'https://ozarkfulfillment.com',
+        telephone: '+1-417-453-1005',
+        email: 'trevor@ozarkfulfillment.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '1475 S Sam Houston Blvd',
+          addressLocality: 'Houston',
+          addressRegion: 'MO',
+          postalCode: '65483',
+          addressCountry: 'US',
+        },
+        image: 'https://ozarkfulfillment.com/logo.png',
+      })}
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

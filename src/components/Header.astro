@@ -1,0 +1,145 @@
+---
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand">
+      <span class="logo-badge brand-logo">
+        <img src="/logo.png" alt="Ozark Fulfillment logo" width="48" height="48" />
+      </span>
+      <span class="brand-name">Ozark <span>Fulfillment</span></span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#integrations">Integrations</a>
+      <a href="#contact">Contact</a>
+      <a href="#quote" class="btn btn-primary nav-cta">Get a Quote</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy-900);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    height: 72px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand-name {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-name span {
+    color: var(--sky);
+    font-weight: 500;
+  }
+
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .site-nav a:not(.nav-cta) {
+    color: #e6edf4;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .site-nav a:not(.nav-cta):hover {
+    color: var(--sky);
+  }
+
+  .nav-cta {
+    padding: 0.55rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  @media (max-width: 760px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .site-nav {
+      display: none;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: var(--navy-800);
+      flex-direction: column;
+      padding: 1.25rem;
+      gap: 1.1rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .site-nav.open {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('site-nav');
+  toggle?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(!!open));
+  });
+  // close the mobile menu after a link is tapped
+  nav?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle?.setAttribute('aria-expanded', 'false');
+    })
+  );
+</script>

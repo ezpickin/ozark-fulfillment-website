@@ -1,0 +1,116 @@
+---
+---
+
+<section class="hero" id="top">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>Warehousing &amp; fulfillment from the heart of the Ozarks</h1>
+      <p class="hero-sub">
+        Ozark Fulfillment is an owner-operated 3PL in Houston, Missouri. We receive your
+        inventory, store it safely, and ship your orders — from single direct-to-consumer
+        parcels to full truckloads — so you can focus on growing your brand.
+      </p>
+      <div class="hero-ctas">
+        <a href="#quote" class="btn btn-primary">Get a Quote</a>
+        <a href="#services" class="btn btn-outline">See Our Services</a>
+      </div>
+      <ul class="hero-chips">
+        <li>Owner-operated</li>
+        <li>Central-US location</li>
+        <li>AI-integrated WMS</li>
+      </ul>
+    </div>
+    <div class="hero-logo">
+      <span class="logo-badge hero-badge">
+        <img src="/logo.png" alt="Ozark Fulfillment — eagle carrying a package over the Ozark hills" width="320" height="320" />
+      </span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(180deg, var(--navy-900) 0%, var(--navy-800) 70%, var(--navy-700) 100%);
+    color: #fff;
+    padding: 5rem 0;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4.5vw, 3.1rem);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-sub {
+    color: #d4e2ee;
+    font-size: 1.1rem;
+    max-width: 36rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    list-style: none;
+  }
+
+  .hero-chips li {
+    border: 1px solid rgba(169, 210, 232, 0.45);
+    color: var(--sky);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .hero-badge {
+    width: min(320px, 60vw);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      padding: 3.5rem 0;
+    }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-sub {
+      margin-inline: auto;
+    }
+
+    .hero-ctas,
+    .hero-chips {
+      justify-content: center;
+    }
+
+    .hero-logo {
+      order: -1;
+    }
+
+    .hero-badge {
+      width: min(200px, 50vw);
+    }
+  }
+</style>

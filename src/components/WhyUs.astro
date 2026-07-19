@@ -1,0 +1,78 @@
+---
+const reasons = [
+  {
+    title: 'Central-US shipping advantage',
+    body: 'From south-central Missouri, ground service reaches most of the country in 2–3 days — without coastal warehouse prices.',
+  },
+  {
+    title: 'Owner-operated, personal service',
+    body: 'You talk directly to the people handling your product — not a ticket queue. Questions get answered the same day.',
+  },
+  {
+    title: 'Fast, careful turnaround',
+    body: 'Containers unloaded promptly, orders out on time, and your inventory treated like it’s our own.',
+  },
+  {
+    title: 'Transparent billing',
+    body: 'Itemized invoices for every task — receiving, storage, labeling, shipping — so you always know exactly what you’re paying for.',
+  },
+];
+---
+
+<section class="why" id="why-us">
+  <div class="container">
+    <h2 class="section-title">Why brands choose Ozark Fulfillment</h2>
+    <p class="section-lede">
+      Big-warehouse capability with small-team accountability.
+    </p>
+    <div class="grid">
+      {
+        reasons.map((r, i) => (
+          <div class="reason">
+            <div class="num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</div>
+            <div>
+              <h3>{r.title}</h3>
+              <p>{r.body}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .why {
+    background: var(--bg-alt);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .reason {
+    display: flex;
+    gap: 1.1rem;
+    align-items: flex-start;
+  }
+
+  .num {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--green);
+    line-height: 1.2;
+  }
+
+  .reason h3 {
+    color: var(--navy-800);
+    font-size: 1.1rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .reason p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+</style>

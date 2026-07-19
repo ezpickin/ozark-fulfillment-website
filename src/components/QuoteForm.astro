@@ -1,0 +1,250 @@
+---
+const services = [
+  'Receiving & Shipping',
+  'Storage',
+  'DTC Fulfillment',
+  'Marketplace / FBA Prep',
+  'Value-Added Services',
+  'Other / Not sure yet',
+];
+
+const volumes = [
+  'Just getting started',
+  'Under 500 orders/month',
+  '500 – 2,000 orders/month',
+  '2,000 – 10,000 orders/month',
+  '10,000+ orders/month',
+  'B2B / wholesale only',
+];
+---
+
+<section class="quote" id="quote">
+  <div class="container">
+    <h2 class="section-title">Get a quote</h2>
+    <p class="section-lede">
+      Tell us a bit about your business and we'll get back to you within one business day.
+    </p>
+
+    <form id="quote-form" novalidate>
+      <div class="row">
+        <label>
+          Name *
+          <input type="text" name="name" required autocomplete="name" />
+        </label>
+        <label>
+          Company
+          <input type="text" name="company" autocomplete="organization" />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>
+          Email *
+          <input type="email" name="email" required autocomplete="email" />
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" autocomplete="tel" />
+        </label>
+      </div>
+
+      <label>
+        Monthly order volume
+        <select name="monthly_volume">
+          <option value="" selected>Select one…</option>
+          {volumes.map((v) => <option value={v}>{v}</option>)}
+        </select>
+      </label>
+
+      <fieldset>
+        <legend>Services you're interested in</legend>
+        <div class="checks">
+          {
+            services.map((s) => (
+              <label class="check">
+                <input type="checkbox" name="services" value={s} />
+                {s}
+              </label>
+            ))
+          }
+        </div>
+      </fieldset>
+
+      <label>
+        Tell us about your products and what you need
+        <textarea name="message" rows="4"></textarea>
+      </label>
+
+      <!-- honeypot — bots fill this, humans never see it -->
+      <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+
+      <button type="submit" class="btn btn-primary" id="quote-submit">Request My Quote</button>
+      <p class="form-status" id="form-status" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<style>
+  .quote {
+    background: var(--bg);
+  }
+
+  form {
+    max-width: 680px;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 600px) {
+    .row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  label {
+    display: grid;
+    gap: 0.35rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--navy-800);
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  select,
+  textarea {
+    font: inherit;
+    font-weight: 400;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #c8d6e2;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid var(--water);
+    outline-offset: 1px;
+    border-color: var(--water);
+  }
+
+  fieldset {
+    border: 1px solid #c8d6e2;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+  }
+
+  legend {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--navy-800);
+    padding: 0 0.4rem;
+  }
+
+  .checks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .botcheck {
+    display: none;
+  }
+
+  #quote-submit {
+    justify-self: start;
+  }
+
+  .form-status {
+    font-weight: 600;
+    min-height: 1.5em;
+  }
+
+  .form-status.ok {
+    color: var(--green-dark);
+  }
+
+  .form-status.err {
+    color: #b3261e;
+  }
+</style>
+
+<script>
+  // Web3Forms delivers submissions to trevor@ozarkfulfillment.com.
+  // Get a free access key at https://web3forms.com (enter the email, key arrives by email),
+  // then replace the placeholder below.
+  const WEB3FORMS_ACCESS_KEY = 'REPLACE_WITH_WEB3FORMS_ACCESS_KEY';
+
+  const form = document.getElementById('quote-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status');
+  const submitBtn = document.getElementById('quote-submit') as HTMLButtonElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!status || !submitBtn) return;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    if (WEB3FORMS_ACCESS_KEY.startsWith('REPLACE_')) {
+      status.className = 'form-status err';
+      status.textContent =
+        'The quote form isn’t connected yet — please email trevor@ozarkfulfillment.com or call (417) 453-1005.';
+      return;
+    }
+
+    status.className = 'form-status';
+    status.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    const data = new FormData(form);
+    data.append('access_key', WEB3FORMS_ACCESS_KEY);
+    data.append('subject', 'New quote request — ozarkfulfillment.com');
+    data.append('from_name', 'Ozark Fulfillment Website');
+    // combine the checked services into one readable field
+    const chosen = data.getAll('services').join(', ');
+    data.delete('services');
+    data.append('services', chosen || 'None selected');
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        status.className = 'form-status ok';
+        status.textContent = "Thanks! Your request is in — we'll reply within one business day.";
+        form.reset();
+      } else {
+        throw new Error(json.message || 'Submission failed');
+      }
+    } catch {
+      status.className = 'form-status err';
+      status.textContent =
+        'Something went wrong. Please email trevor@ozarkfulfillment.com or call (417) 453-1005.';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>

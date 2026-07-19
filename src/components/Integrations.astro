@@ -1,0 +1,53 @@
+---
+const platforms = ['Amazon Seller Central', 'Shopify', 'TikTok Shop', 'Walmart Marketplace'];
+---
+
+<section class="integrations" id="integrations">
+  <div class="container">
+    <h2 class="section-title">We plug into the platforms you sell on</h2>
+    <p class="section-lede">
+      Orders flow straight from your sales channels to our floor — powered by an
+      AI-integrated warehouse management system for real-time inventory and order accuracy.
+    </p>
+    <ul class="platform-list">
+      {platforms.map((p) => <li>{p}</li>)}
+      <li class="more">+ many others</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .integrations {
+    background: var(--navy-800);
+  }
+
+  .integrations .section-title {
+    color: #fff;
+  }
+
+  .integrations .section-lede {
+    color: #d4e2ee;
+  }
+
+  .platform-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  .platform-list li {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(169, 210, 232, 0.35);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .platform-list li.more {
+    color: var(--sky);
+    border-style: dashed;
+    font-weight: 500;
+  }
+</style>
