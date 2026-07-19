@@ -30,10 +30,13 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 - Site is **live** at http://ozarkfulfillment.com. HTTPS certificate provisioning was slow on GitHub's side; once issued, enable "Enforce HTTPS" in Pages settings (or via `gh api ... /pages -X PUT -F https_enforced=true`).
 - `gh` CLI is installed at `/c/Program Files/GitHub CLI` (add to PATH in Bash). Authenticated as `ezpickin` with `repo` + `workflow` scopes.
 
+## Analytics
+
+- **Cloudflare Web Analytics** (cookieless, privacy-friendly) beacon is in `Layout.astro` before `</body>`, so it loads on every page. Data is private to the owner's Cloudflare dashboard. Localhost visits are NOT counted — only the live domain reports.
+
 ## Possible future enhancements (discussed, not yet done)
 
 - Real warehouse photos (recommended over stock) — a photo section or hero background once the user provides them.
-- Privacy-friendly analytics (Cloudflare Web Analytics recommended) — needs the user to create the property and supply the token.
 
 ## Commands
 
