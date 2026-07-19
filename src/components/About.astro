@@ -1,0 +1,71 @@
+---
+---
+
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-media">
+      <span class="logo-badge about-badge">
+        <img src="/logo.png" alt="Ozark Fulfillment logo" width="240" height="240" />
+      </span>
+    </div>
+    <div class="about-copy">
+      <h2 class="section-title">About Ozark Fulfillment</h2>
+      <p>
+        Ozark Fulfillment is an owner-operated third-party logistics (3PL) provider helping
+        e-commerce brands scale across every channel they sell on. From our 65,000 sq ft
+        warehouse in Houston, Missouri, we handle Amazon FBA prep, Walmart WFS prep,
+        direct-to-consumer fulfillment, and B2B/wholesale distribution — all under one roof.
+      </p>
+      <p>
+        Our services include FNSKU labeling, polybagging, bundling, carton forwarding, and
+        value-added work like kitting and custom packaging, backed by flexible storage that
+        includes 9,000 sq ft of climate-controlled space. Our central-US location puts your
+        inventory within favorable shipping zones to most of the country, and our
+        owner-operated model means you get direct account management — not a ticket queue.
+      </p>
+      <a href="#quote" class="btn btn-primary">Work With Us</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--bg);
+  }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .about-badge {
+    width: min(240px, 60vw);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    display: block;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .about-copy p {
+    color: var(--ink-soft);
+    margin-bottom: 1.1rem;
+  }
+
+  .about-copy .btn {
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .about-badge {
+      width: min(180px, 45vw);
+    }
+  }
+</style>

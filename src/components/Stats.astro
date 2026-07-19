@@ -1,0 +1,65 @@
+---
+const stats = [
+  { value: '65,000', unit: 'sq ft', label: 'Warehouse space' },
+  { value: '99%', unit: '', label: 'Order accuracy' },
+  { value: '250,000+', unit: 'units/yr', label: 'Shipped and growing' },
+];
+---
+
+<section class="stats" aria-label="Company at a glance">
+  <div class="container stats-grid">
+    {
+      stats.map((s) => (
+        <div class="stat">
+          <div class="stat-value">
+            {s.value}
+            {s.unit && <span class="stat-unit">{s.unit}</span>}
+          </div>
+          <div class="stat-label">{s.label}</div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .stats {
+    background: var(--green);
+    padding: 2.5rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .stat-value {
+    color: #fff;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .stat-unit {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.85;
+    margin-left: 0.25rem;
+  }
+
+  .stat-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.35rem;
+  }
+
+  @media (max-width: 560px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+    }
+  }
+</style>

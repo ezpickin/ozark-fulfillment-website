@@ -1,0 +1,105 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const updated = 'July 2026';
+---
+
+<Layout
+  title="Privacy Policy — Ozark Fulfillment"
+  description="How Ozark Fulfillment collects, uses, and protects information submitted through our website."
+>
+  <Header />
+  <main class="legal">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: {updated}</p>
+
+      <p>
+        Ozark Fulfillment ("we," "us," or "our") operates the website ozarkfulfillment.com.
+        This policy explains what information we collect through the site and how we use it.
+      </p>
+
+      <h2>Information we collect</h2>
+      <p>
+        We only collect the information you choose to give us. When you submit our quote
+        request form, we collect the details you provide — such as your name, company, email
+        address, phone number, order volume, and any message you send. We do not sell this
+        information or share it with third parties for their own marketing.
+      </p>
+
+      <h2>How we use it</h2>
+      <p>
+        We use the information you submit solely to respond to your inquiry, prepare a quote,
+        and communicate with you about our services. Form submissions are delivered to us by
+        email through our form provider, Web3Forms.
+      </p>
+
+      <h2>Cookies and analytics</h2>
+      <p>
+        Our website does not use advertising cookies or track you across other sites. If we
+        add basic, privacy-respecting analytics in the future to understand overall site
+        traffic, it will not personally identify you.
+      </p>
+
+      <h2>Data retention</h2>
+      <p>
+        We keep quote requests only as long as needed to serve you and maintain our business
+        records. You may ask us to delete your information at any time.
+      </p>
+
+      <h2>Contact us</h2>
+      <p>
+        Questions about this policy or your information? Contact us at
+        <a href="mailto:trevor@ozarkfulfillment.com">trevor@ozarkfulfillment.com</a> or
+        (417) 453-1005.
+      </p>
+
+      <p class="back"><a href="/">← Back to home</a></p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .legal {
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .legal .container {
+    max-width: 760px;
+  }
+
+  .legal h1 {
+    color: var(--navy-800);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    margin-bottom: 0.35rem;
+  }
+
+  .updated {
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .legal h2 {
+    color: var(--navy-800);
+    font-size: 1.2rem;
+    margin: 2rem 0 0.5rem;
+  }
+
+  .legal p {
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+  }
+
+  .legal a {
+    color: var(--water);
+  }
+
+  .back {
+    margin-top: 2.5rem;
+    font-weight: 600;
+  }
+</style>

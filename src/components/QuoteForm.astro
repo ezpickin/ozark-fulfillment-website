@@ -80,6 +80,10 @@ const volumes = [
 
       <button type="submit" class="btn btn-primary" id="quote-submit">Request My Quote</button>
       <p class="form-status" id="form-status" role="status"></p>
+      <p class="form-privacy">
+        We use your details only to respond to your request. See our
+        <a href="/privacy">Privacy Policy</a>.
+      </p>
     </form>
   </div>
 </section>
@@ -184,6 +188,15 @@ const volumes = [
 
   .form-status.err {
     color: #b3261e;
+  }
+
+  .form-privacy {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  .form-privacy a {
+    color: var(--water);
   }
 </style>
 
