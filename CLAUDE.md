@@ -27,7 +27,7 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 - Repo: **github.com/ezpickin/ozark-fulfillment-website** (public). GitHub account is `ezpickin`; git identity is Trevor Morris / tmorrisrex@gmail.com.
 - Deploys via GitHub Action (`.github/workflows/deploy.yml`, uses `withastro/action`) on push to `main`.
 - Custom domain: `public/CNAME` contains `ozarkfulfillment.com`; GoDaddy DNS has 4 A records (`@` → 185.199.108–111.153) and `www` CNAME → `ezpickin.github.io`.
-- Site is **live** at http://ozarkfulfillment.com. HTTPS certificate provisioning was slow on GitHub's side; once issued, enable "Enforce HTTPS" in Pages settings (or via `gh api ... /pages -X PUT -F https_enforced=true`).
+- Site is **live at https://ozarkfulfillment.com** with a valid certificate and "Enforce HTTPS" ON (`http://` and `www` both 301-redirect to the secure apex). The cert took ~66 min to provision; enforcement is already enabled.
 - `gh` CLI is installed at `/c/Program Files/GitHub CLI` (add to PATH in Bash). Authenticated as `ezpickin` with `repo` + `workflow` scopes.
 
 ## Analytics

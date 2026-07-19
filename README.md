@@ -48,7 +48,9 @@ The custom domain is set by `public/CNAME` (`ozarkfulfillment.com`) plus DNS in 
 - `www` `CNAME` → `ezpickin.github.io`
 - **Email (MX/TXT) records are untouched and must stay that way.**
 
-After the GitHub-issued HTTPS certificate is active, turn on **Enforce HTTPS** in the repo's Pages settings so `http://` redirects to `https://`.
+HTTPS is live and **Enforce HTTPS** is on, so `http://` and `www` both redirect to `https://ozarkfulfillment.com`.
+
+Analytics: a Cloudflare Web Analytics beacon (cookieless) is in `src/layouts/Layout.astro`. Stats are private to the owner's Cloudflare dashboard.
 
 ## Contact
 

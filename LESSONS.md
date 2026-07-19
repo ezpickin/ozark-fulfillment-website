@@ -2,6 +2,11 @@
 
 A running log of decisions and gotchas, newest first.
 
+## 2026-07-18 — HTTPS resolved & analytics added
+
+- **HTTPS resolved on its own (~66 min).** Holding off on the remove/re-add nudge was the right call — the cert issued automatically. Confusingly, manual `curl` checks from this Windows machine kept returning `WRONG_PRINCIPAL` for 3+ hours *after* the cert was actually live, because requests hit GitHub edge nodes at different propagation stages. Lesson: trust a clean 200 from any node + `https_enforced:true` over intermittent handshake failures, and note the Pages API `status` field can stay `null` even when HTTPS works fine. "Enforce HTTPS" auto-enabled by the watcher; `http://` and `www` now 301 → secure apex.
+- **Cloudflare Web Analytics added.** Cookieless beacon in `Layout.astro` (loads on all pages). Owner supplied the token from their Cloudflare dashboard — it's the only piece that can't be generated without their login. Localhost visits don't report; only the live domain counts.
+
 ## 2026-07-18 — Launch, deploy & content polish
 
 - **Deployed to GitHub Pages under the `ezpickin` account.** Auth via `gh` CLI device flow. First push was rejected because the OAuth token lacked the `workflow` scope (repo contains `.github/workflows/deploy.yml`) — fixed with `gh auth refresh -s workflow`.
