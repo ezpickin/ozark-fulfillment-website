@@ -7,6 +7,8 @@ A running log of decisions and gotchas, newest first.
 - **No leads ≠ broken form.** Audit found the Web3Forms → Gmail pipeline intact (only 2 submissions ever: launch test + one spam bot, both delivered). The real issue is traffic: ~280 visits in 3.5 months, ~4 from Google. Form notifications land in Gmail's Promotions/Updates tabs — filter them to Primary.
 - **Cloudflare Web Analytics samples old data.** Data older than ~1 week is kept at a 1-in-10 sample (`sampleInterval` 10), so per-day counts in multiples of 10 are estimates; only the last ~week is exact. GraphQL queries are capped at ~13 weeks per request.
 - **Web3Forms blocks non-browser/datacenter traffic** with a Cloudflare challenge (403 / CORS error), so the form can't be end-to-end tested from a cloud sandbox — test from a real phone/home connection.
+- **Added `/thanks/` redirect after a successful submit** so Cloudflare Web Analytics (which has no custom events) counts conversions as page views. Kept Web3Forms over Google Forms: an embedded Google Form can't be branded, has no CAPTCHA, and its notification emails omit the response; the unofficial `formResponse` POST hack can't report success/failure. If an owned record is wanted later, use an Apps Script → Google Sheet backend behind the same form.
+- **Header/Footer `#anchor` links were broken on /privacy** (pointed to sections that only exist on the home page). Now `/#anchor`.
 - **Canonical was hardcoded to the home page on every page** (incl. /privacy) — now computed per page. Added sitemap + robots.txt; next steps are Google Search Console (submit `sitemap-index.xml`) and a Google Business Profile.
 
 ## 2026-07-18 — HTTPS resolved & analytics added

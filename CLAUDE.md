@@ -10,7 +10,8 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 
 ## Stack & architecture
 
-- **Astro 5** static site. Two pages: the single scrolling home page (`src/pages/index.astro`) and a Privacy Policy (`src/pages/privacy.astro`).
+- **Astro 5** static site. Three pages: the single scrolling home page (`src/pages/index.astro`), a Privacy Policy (`src/pages/privacy.astro`), and a post-submit confirmation page (`src/pages/thanks.astro` — noindexed via Layout's `noindex` prop, excluded from the sitemap, not linked anywhere).
+- **Header/Footer nav links use `/#section`** (not bare `#section`) so they work from every page; on the home page they still scroll in place without a reload.
 - `src/layouts/Layout.astro` — shared `<head>` (meta, OpenGraph, LocalBusiness JSON-LD). Accepts optional `title`/`description` props (home page uses defaults; privacy page overrides them). `canonical` and `og:url` are computed per page from `Astro.url` (e.g. `/privacy/`) — never hardcode them.
 - **SEO plumbing:** `@astrojs/sitemap` (pinned 3.6.x — 3.7+ targets zod 4/Astro 6) generates `sitemap-index.xml` + `sitemap-0.xml` at build; `public/robots.txt` points to it. New pages are picked up automatically.
 - Home-page section components in `src/components/`, assembled in this order: `Header` → `Hero` → `Stats` → `Services` → `WhyUs` → `About` → `Integrations` → `QuoteForm` → `Footer`. Each is self-contained so a section can later become its own page.
@@ -20,7 +21,7 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 - **Stats strip** (`Stats.astro`): 4 tiles — 65,000 sq ft total · 9,000 sq ft climate-controlled · Same-Day (fulfillment by 12 PM CT) · 250,000+ units/yr. (A previous "99% order accuracy" tile was removed — a precise, below-industry-standard number that invited scrutiny.)
 - **About** (`About.astro`): copy sourced from the company's LinkedIn profile.
 - **Footer** (`Footer.astro`): address, phone, email, business hours (Mon–Fri 8:00 AM–4:30 PM CT), LinkedIn + Facebook icon links, and a Privacy Policy link.
-- **Quote form** (`QuoteForm.astro`): posts to Web3Forms → trevor@ozarkfulfillment.com. Live access key `b1771689-1b3b-457b-9176-e8cd5458f9fb` is set in the `<script>` (`WEB3FORMS_ACCESS_KEY`). Honeypot spam field `botcheck`. Verified working (submissions land in the inbox).
+- **Quote form** (`QuoteForm.astro`): posts to Web3Forms → trevor@ozarkfulfillment.com. Live access key `b1771689-1b3b-457b-9176-e8cd5458f9fb` is set in the `<script>` (`WEB3FORMS_ACCESS_KEY`). Honeypot spam field `botcheck`. Verified working (submissions land in the inbox). On success the form redirects to `/thanks/`, so **`/thanks/` page views in Cloudflare = successful submissions** — compare against Web3Forms emails to catch delivery failures.
 
 ## Hosting & deployment
 

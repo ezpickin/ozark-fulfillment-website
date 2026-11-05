@@ -246,9 +246,11 @@ const volumes = [
       });
       const json = await res.json();
       if (json.success) {
-        status.className = 'form-status ok';
-        status.textContent = "Thanks! Your request is in — we'll reply within one business day.";
+        // Send the visitor to /thanks/ — each successful submission then shows up
+        // as a /thanks/ page view in Cloudflare Web Analytics.
         form.reset();
+        window.location.assign('/thanks/');
+        return;
       } else {
         throw new Error(json.message || 'Submission failed');
       }
