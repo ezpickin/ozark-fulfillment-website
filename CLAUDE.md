@@ -11,7 +11,8 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 ## Stack & architecture
 
 - **Astro 5** static site. Two pages: the single scrolling home page (`src/pages/index.astro`) and a Privacy Policy (`src/pages/privacy.astro`).
-- `src/layouts/Layout.astro` — shared `<head>` (meta, OpenGraph, LocalBusiness JSON-LD). Accepts optional `title`/`description` props (home page uses defaults; privacy page overrides them).
+- `src/layouts/Layout.astro` — shared `<head>` (meta, OpenGraph, LocalBusiness JSON-LD). Accepts optional `title`/`description` props (home page uses defaults; privacy page overrides them). `canonical` and `og:url` are computed per page from `Astro.url` (e.g. `/privacy/`) — never hardcode them.
+- **SEO plumbing:** `@astrojs/sitemap` (pinned 3.6.x — 3.7+ targets zod 4/Astro 6) generates `sitemap-index.xml` + `sitemap-0.xml` at build; `public/robots.txt` points to it. New pages are picked up automatically.
 - Home-page section components in `src/components/`, assembled in this order: `Header` → `Hero` → `Stats` → `Services` → `WhyUs` → `About` → `Integrations` → `QuoteForm` → `Footer`. Each is self-contained so a section can later become its own page.
 - Shared palette/typography: `src/styles/global.css` (CSS custom properties, derived from the badge logo: navy `#142438/#1b3252`, sky `#a9d2e8`, green `#3a7d3a`, water `#2170b8`, silver `#c6ccd4`). Font is the **system font stack** (Segoe UI / system-ui) — user considered Manrope+Inter but chose to keep the system font for readability.
 - The logo (`public/logo.png`) has a white margin around a circular badge — display it inside `.logo-badge` (circular crop + `scale(1.12)`).

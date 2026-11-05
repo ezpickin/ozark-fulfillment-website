@@ -2,6 +2,13 @@
 
 A running log of decisions and gotchas, newest first.
 
+## 2026-11-05 — Lead audit, sitemap & canonical fix
+
+- **No leads ≠ broken form.** Audit found the Web3Forms → Gmail pipeline intact (only 2 submissions ever: launch test + one spam bot, both delivered). The real issue is traffic: ~280 visits in 3.5 months, ~4 from Google. Form notifications land in Gmail's Promotions/Updates tabs — filter them to Primary.
+- **Cloudflare Web Analytics samples old data.** Data older than ~1 week is kept at a 1-in-10 sample (`sampleInterval` 10), so per-day counts in multiples of 10 are estimates; only the last ~week is exact. GraphQL queries are capped at ~13 weeks per request.
+- **Web3Forms blocks non-browser/datacenter traffic** with a Cloudflare challenge (403 / CORS error), so the form can't be end-to-end tested from a cloud sandbox — test from a real phone/home connection.
+- **Canonical was hardcoded to the home page on every page** (incl. /privacy) — now computed per page. Added sitemap + robots.txt; next steps are Google Search Console (submit `sitemap-index.xml`) and a Google Business Profile.
+
 ## 2026-07-18 — HTTPS resolved & analytics added
 
 - **HTTPS resolved on its own (~66 min).** Holding off on the remove/re-add nudge was the right call — the cert issued automatically. Confusingly, manual `curl` checks from this Windows machine kept returning `WRONG_PRINCIPAL` for 3+ hours *after* the cert was actually live, because requests hit GitHub edge nodes at different propagation stages. Lesson: trust a clean 200 from any node + `https_enforced:true` over intermittent handshake failures, and note the Pages API `status` field can stay `null` even when HTTPS works fine. "Enforce HTTPS" auto-enabled by the watcher; `http://` and `www` now 301 → secure apex.

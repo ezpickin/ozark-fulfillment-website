@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ozarkfulfillment.com/sitemap-index.xml

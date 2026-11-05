@@ -50,6 +50,8 @@ The custom domain is set by `public/CNAME` (`ozarkfulfillment.com`) plus DNS in 
 
 HTTPS is live and **Enforce HTTPS** is on, so `http://` and `www` both redirect to `https://ozarkfulfillment.com`.
 
+SEO: `@astrojs/sitemap` builds `/sitemap-index.xml` (referenced by `public/robots.txt`); submit it in Google Search Console.
+
 Analytics: a Cloudflare Web Analytics beacon (cookieless) is in `src/layouts/Layout.astro`. Stats are private to the owner's Cloudflare dashboard.
 
 ## Contact
