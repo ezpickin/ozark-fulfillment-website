@@ -1,0 +1,90 @@
+---
+import ServicePage from '../components/ServicePage.astro';
+
+// Page copy — edit freely. Keep claims to things we can stand behind (see LESSONS.md).
+// Deliberately no temperature/humidity figures — add them only once confirmed.
+const included = [
+  {
+    title: '9,000 sq ft climate-controlled',
+    body: 'Space for products that shouldn’t sit through Missouri summer heat or winter cold — candles, cosmetics, and other temperature-sensitive goods.',
+  },
+  {
+    title: '65,000 sq ft total',
+    body: 'Clean, organized warehouse space for everything from a few pallets of backstock to full container loads.',
+  },
+  {
+    title: 'Receiving that keeps up',
+    body: 'LTL, full truckload, floor-loaded 20′ and 40′ containers, and carton forwarding — counted and put away within 48 hours.',
+  },
+  {
+    title: 'Real-time inventory visibility',
+    body: 'Know what’s on hand at any time, backed by an AI-integrated warehouse management system.',
+  },
+  {
+    title: 'Pay only for what you use',
+    body: 'You’re billed for the space you actually occupy, with every charge itemized on your invoice.',
+  },
+  {
+    title: 'Ready to ship from storage',
+    body: 'Direct-to-consumer orders, Amazon and Walmart prep, and wholesale shipments all go out from the same building.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Tell us about your products',
+    body: 'What you store, how much, and whether it needs climate control.',
+  },
+  {
+    title: 'Send your inventory',
+    body: 'Parcel, LTL, full truckload, or container — unloaded, counted, and put away within 48 hours.',
+  },
+  {
+    title: 'We store and track it',
+    body: 'Discrepancies are reported to you the same day, and inventory is visible in real time.',
+  },
+  {
+    title: 'Ship when you’re ready',
+    body: 'Fulfill orders, replenish Amazon or Walmart, or ship wholesale — straight from storage.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'What kinds of products need climate-controlled storage?',
+    a: 'Anything that can melt, warp, or degrade in extreme heat or cold — candles and cosmetics are common examples. Tell us your product’s storage requirements and we’ll confirm whether our climate-controlled space is the right fit.',
+  },
+  {
+    q: 'How is storage billed?',
+    a: 'You pay only for the space you actually use, and every charge is itemized on your invoice. Request a quote below for pricing on your products and volume.',
+  },
+  {
+    q: 'How quickly is inventory received?',
+    a: 'Inbound freight — LTL, full truckload, or floor-loaded containers — is unloaded, counted, and put away within 48 hours, with any discrepancies reported the same day.',
+  },
+  {
+    q: 'Can you ship orders straight from storage?',
+    a: 'Yes. We handle direct-to-consumer fulfillment with same-day shipping on orders by 12:00 PM CT, plus Amazon FBA and Walmart WFS prep and B2B/wholesale orders.',
+  },
+  {
+    q: 'Where is the warehouse?',
+    a: '1475 S Sam Houston Blvd, Houston, Missouri 65483 — in south-central Missouri, where ground service reaches most of the country in 2–3 days.',
+  },
+];
+---
+
+<ServicePage
+  slug="climate-controlled-storage"
+  title="Climate-Controlled Warehouse Storage in Missouri — Ozark Fulfillment"
+  description="65,000 sq ft warehouse in Houston, Missouri with 9,000 sq ft of climate-controlled storage, real-time inventory visibility, and billing only for the space you use."
+  serviceType="Climate-controlled warehousing and storage"
+  eyebrow="Warehousing & Storage · Houston, Missouri"
+  h1="Climate-Controlled Warehouse Storage in Missouri"
+  lede="65,000 sq ft of clean, organized warehouse space — including 9,000 sq ft climate-controlled — with real-time inventory visibility, and billing only for the space you actually use."
+  chips={['9,000 sq ft climate-controlled', '48-hour receiving', 'Pay for what you use']}
+  includedTitle="What’s included"
+  included={included}
+  steps={steps}
+  faqs={faqs}
+  preselect="Storage"
+/>

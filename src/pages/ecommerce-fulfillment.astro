@@ -1,0 +1,89 @@
+---
+import ServicePage from '../components/ServicePage.astro';
+
+// Page copy — edit freely. Keep claims to things we can stand behind (see LESSONS.md).
+const included = [
+  {
+    title: 'Connected to your store',
+    body: 'Orders flow straight from Shopify, TikTok Shop, Amazon Seller Central, Walmart Marketplace, and many other platforms to our warehouse floor.',
+  },
+  {
+    title: 'Same-day shipping',
+    body: 'Orders received by our 12:00 PM CT cutoff ship the same day.',
+  },
+  {
+    title: 'Real-time inventory',
+    body: 'An AI-integrated warehouse management system keeps your stock levels and order status current across every channel.',
+  },
+  {
+    title: 'Pick, pack & ship',
+    body: 'From single direct-to-consumer parcels to full truckloads, packed carefully and shipped on time.',
+  },
+  {
+    title: 'Custom packaging & kitting',
+    body: 'Kits, assortments, bundles, and custom packaging when your brand needs more than a plain box.',
+  },
+  {
+    title: 'B2B & wholesale orders',
+    body: 'Retail and wholesale shipments handled from the same inventory as your direct-to-consumer orders.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Connect your store',
+    body: 'We link your Shopify, TikTok Shop, or marketplace account so orders come to us automatically.',
+  },
+  {
+    title: 'Send us your inventory',
+    body: 'Ship by parcel, LTL, full truckload, or container. We unload, count, and put away within 48 hours.',
+  },
+  {
+    title: 'Orders flow in',
+    body: 'New orders land on our floor as they’re placed — picked, packed, and labeled by our team.',
+  },
+  {
+    title: 'Shipped and tracked',
+    body: 'Orders in by 12:00 PM CT ship the same day, and you get itemized invoices for every task.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'What is your same-day shipping cutoff?',
+    a: 'Orders received by 12:00 PM Central Time ship the same business day.',
+  },
+  {
+    q: 'Which platforms do you integrate with?',
+    a: 'Amazon Seller Central, Shopify, TikTok Shop, and Walmart Marketplace, plus many others. If you sell somewhere else, ask us — chances are we can connect to it.',
+  },
+  {
+    q: 'Can one warehouse handle all of my channels?',
+    a: 'Yes. Direct-to-consumer orders, Amazon FBA and Walmart WFS prep, and B2B/wholesale shipments all run from one warehouse, with one point of contact.',
+  },
+  {
+    q: 'How fast do orders reach my customers?',
+    a: 'From south-central Missouri, ground service reaches most of the country in 2–3 days.',
+  },
+  {
+    q: 'How is fulfillment priced?',
+    a: 'It depends on your order volume and products. Every task is itemized on your invoice — receiving, storage, pick and pack, and shipping — so you always know what you’re paying for. Request a quote below and we’ll reply within one business day.',
+  },
+];
+---
+
+<ServicePage
+  slug="ecommerce-fulfillment"
+  title="Shopify & TikTok Shop Fulfillment — Ozark Fulfillment 3PL"
+  description="E-commerce order fulfillment for Shopify, TikTok Shop, Amazon, and Walmart sellers. Same-day shipping on orders by 12 PM CT from our central-US warehouse. Get a quote."
+  serviceType="E-commerce order fulfillment"
+  eyebrow="E-commerce Fulfillment · Houston, Missouri"
+  h1="Shopify & TikTok Shop Order Fulfillment"
+  lede="Orders flow straight from your store to our warehouse floor, where they’re picked, packed, and shipped — the same day when they come in by our 12:00 PM CT cutoff."
+  chips={['Same-day by 12 PM CT', '2–3 day ground to most of the U.S.', 'AI-integrated WMS']}
+  includedTitle="What’s included"
+  included={included}
+  steps={steps}
+  faqs={faqs}
+  preselect="DTC Fulfillment"
+/>

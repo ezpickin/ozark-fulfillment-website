@@ -1,0 +1,89 @@
+---
+import ServicePage from '../components/ServicePage.astro';
+
+// Page copy — edit freely. Keep claims to things we can stand behind (see LESSONS.md).
+const included = [
+  {
+    title: 'Item labeling',
+    body: 'Individual or bulk item labeling to Walmart’s WFS requirements, so inventory is received without problems.',
+  },
+  {
+    title: 'Polybagging & protective packaging',
+    body: 'Polybagging, bubble wrap, and repacking so units arrive at Walmart in sellable condition.',
+  },
+  {
+    title: 'Bundling & kitting',
+    body: 'Multi-packs, sets, and assortments assembled and labeled as one sellable item.',
+  },
+  {
+    title: 'Case prep & carton labeling',
+    body: 'Cases packed and labeled for your inbound order — or cartons forwarded as-is when they arrive ready.',
+  },
+  {
+    title: 'Counted on arrival',
+    body: 'Inbound freight is unloaded, counted, and put away within 48 hours, with any discrepancies reported to you the same day.',
+  },
+  {
+    title: 'Storage & replenishment',
+    body: 'Hold backstock here — including climate-controlled space — and send it to Walmart in the quantities you need.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Send us your inventory',
+    body: 'Ship from your supplier by parcel, LTL, full truckload, or floor-loaded container (20′ or 40′).',
+  },
+  {
+    title: 'Share your inbound order',
+    body: 'Tell us what’s going to WFS and send the labels from your Walmart Seller Center inbound order.',
+  },
+  {
+    title: 'We prep and label',
+    body: 'Units are labeled, bagged, bundled, or boxed to Walmart’s requirements — normally within 24–48 hours.',
+  },
+  {
+    title: 'Shipped to Walmart',
+    body: 'Cartons ship to the Walmart fulfillment centers on your order, with every task itemized on your invoice.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'How fast is WFS prep turnaround?',
+    a: 'Normal turnaround is 24–48 hours once your inbound order and labels are ready. Inbound freight is unloaded, counted, and put away within 48 hours of arrival.',
+  },
+  {
+    q: 'Do you prep for Amazon FBA too?',
+    a: 'Yes. If you sell on both, we can prep for Amazon and Walmart from the same inventory in one warehouse.',
+  },
+  {
+    q: 'Can you ship the Walmart orders I fulfill myself?',
+    a: 'Yes. We connect to Walmart Marketplace, so seller-fulfilled orders can flow straight to our floor and ship from here, alongside your other channels.',
+  },
+  {
+    q: 'Why a prep center in Missouri?',
+    a: 'From south-central Missouri, ground service reaches most of the country in 2–3 days — without coastal warehouse prices.',
+  },
+  {
+    q: 'How is WFS prep priced?',
+    a: 'It depends on your products and volume. Every task is itemized on your invoice — receiving, storage, labeling, prep, and shipping — so there are no surprises. Request a quote below and we’ll reply within one business day.',
+  },
+];
+---
+
+<ServicePage
+  slug="walmart-wfs-prep"
+  title="Walmart WFS Prep Services — Ozark Fulfillment, Missouri"
+  description="Walmart Fulfillment Services (WFS) prep from a central-US 3PL: item labeling, polybagging, bundling, and case prep with 24–48 hour turnaround. Get a quote."
+  serviceType="Walmart Fulfillment Services (WFS) prep"
+  eyebrow="Walmart WFS Prep · Houston, Missouri"
+  h1="Walmart WFS Prep Services"
+  lede="Selling through Walmart Fulfillment Services? We receive your inventory, prep and label it to Walmart’s requirements, and ship it on to Walmart’s fulfillment centers — normally within 24–48 hours."
+  chips={['24–48 hr prep turnaround', 'Amazon + Walmart from one warehouse', 'Owner-operated']}
+  includedTitle="What’s included"
+  included={included}
+  steps={steps}
+  faqs={faqs}
+  preselect="Marketplace / FBA Prep"
+/>

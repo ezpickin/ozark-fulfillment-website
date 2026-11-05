@@ -10,18 +10,21 @@ const services = [
     // warehouse
     svg: '<path d="M3 21V7l9-4 9 4v14"/><path d="M3 11h18"/><path d="M3 16h18"/><path d="M9 21v-5h6v5"/>',
     title: 'Storage',
+    links: [{ href: '/climate-controlled-storage/', label: 'Climate-controlled storage' }],
     body: 'Clean, organized storage — including climate-controlled space — with real-time inventory visibility. Pay only for the space you actually use.',
   },
   {
     // package
     svg: '<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>',
     title: 'DTC Fulfillment',
+    links: [{ href: '/ecommerce-fulfillment/', label: 'Shopify & TikTok Shop fulfillment' }],
     body: 'Fast, accurate pick, pack, and ship for your Shopify, TikTok Shop, and marketplace orders — same-day shipping on orders received by our 12:00 PM CT cutoff.',
   },
   {
     // tag / label
     svg: '<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>',
     title: 'Marketplace & FBA Prep',
+    links: [{ href: '/amazon-fba-prep/', label: 'Amazon FBA prep' }, { href: '/walmart-wfs-prep/', label: 'Walmart WFS prep' }],
     body: 'SKU labeling (individual or bulk), polybagging, bundling, and case prep to Amazon and Walmart spec, so your shipments check in without issues. Normal turnaround time is 24–48 hours.',
   },
   {
@@ -56,6 +59,13 @@ const services = [
             </div>
             <h3>{s.title}</h3>
             <p>{s.body}</p>
+            {s.links && (
+              <p class="more-links">
+                {s.links.map((l) => (
+                  <a href={l.href}>{l.label} →</a>
+                ))}
+              </p>
+            )}
           </article>
         ))
       }
@@ -121,6 +131,23 @@ const services = [
   .card p {
     color: var(--ink-soft);
     font-size: 0.95rem;
+  }
+
+  .more-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 0.75rem;
+  }
+
+  .more-links a {
+    color: var(--water);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .more-links a:hover {
+    text-decoration: underline;
   }
 
   .card-cta {

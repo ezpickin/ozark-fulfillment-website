@@ -1,0 +1,93 @@
+---
+import ServicePage from '../components/ServicePage.astro';
+
+// Page copy — edit freely. Keep claims to things we can stand behind (see LESSONS.md).
+const included = [
+  {
+    title: 'FNSKU labeling',
+    body: 'Individual or bulk FNSKU labeling so every unit scans cleanly at Amazon check-in.',
+  },
+  {
+    title: 'Polybagging & bubble wrap',
+    body: 'Polybagging and protective wrap to Amazon’s packaging requirements, so units arrive sellable.',
+  },
+  {
+    title: 'Bundling & kitting',
+    body: 'Multi-packs, sets, and bundles assembled and labeled as a single sellable unit.',
+  },
+  {
+    title: 'Case prep & carton forwarding',
+    body: 'Case packing and carton labeling for your shipment plan — or straight carton forwarding when goods arrive ready to go.',
+  },
+  {
+    title: 'Counted on arrival',
+    body: 'Inbound freight is unloaded, counted, and put away within 48 hours, with any discrepancies reported to you the same day.',
+  },
+  {
+    title: 'Backstock storage',
+    body: 'Keep inventory here — including climate-controlled space — and replenish Amazon in smaller shipments as you need to.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Send us your inventory',
+    body: 'Ship from your supplier by parcel, LTL, full truckload, or floor-loaded container (20′ or 40′).',
+  },
+  {
+    title: 'Share your shipment plan',
+    body: 'Tell us what’s headed to Amazon and send the labels from your Seller Central shipment.',
+  },
+  {
+    title: 'We prep and label',
+    body: 'Units are labeled, bagged, bundled, or boxed to Amazon’s requirements — normally within 24–48 hours.',
+  },
+  {
+    title: 'Out the door to Amazon',
+    body: 'Cartons ship to the fulfillment centers on your plan, and every task shows up itemized on your invoice.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'How fast is your FBA prep turnaround?',
+    a: 'Normal turnaround is 24–48 hours once your shipment plan and labels are ready. Inbound freight is unloaded, counted, and put away within 48 hours of arrival.',
+  },
+  {
+    q: 'Doesn’t Amazon prep inventory itself?',
+    a: 'Not anymore in the U.S. Amazon discontinued its FBA prep and item-labeling services for shipments created on or after January 1, 2026, so inventory has to arrive already labeled and prepped. That’s the work we do.',
+  },
+  {
+    q: 'Why use a prep center in Missouri?',
+    a: 'From south-central Missouri, ground service reaches most of the country in 2–3 days — and you aren’t paying coastal warehouse prices for the space and labor.',
+  },
+  {
+    q: 'Can you handle my non-Amazon orders too?',
+    a: 'Yes. We also handle Walmart WFS prep, direct-to-consumer fulfillment for Shopify and TikTok Shop, and B2B/wholesale orders — all from one warehouse, with one point of contact.',
+  },
+  {
+    q: 'How is FBA prep priced?',
+    a: 'It depends on your products and volume. Every task — receiving, storage, labeling, prep, and shipping — is itemized on your invoice, so you always know exactly what you’re paying for. Request a quote below and we’ll reply within one business day.',
+  },
+];
+---
+
+<ServicePage
+  slug="amazon-fba-prep"
+  title="Amazon FBA Prep Center in Missouri — Ozark Fulfillment"
+  description="Amazon FBA prep center in Houston, Missouri: FNSKU labeling, polybagging, bundling, and case prep with 24–48 hour turnaround. Owner-operated 3PL. Get a quote."
+  serviceType="Amazon FBA prep"
+  eyebrow="Amazon FBA Prep · Houston, Missouri"
+  h1="Amazon FBA Prep Center in Missouri"
+  lede="We receive your inventory, prep it to Amazon’s requirements, and send it on to Amazon’s fulfillment centers — labeled, packed, and ready to check in. Normal prep turnaround is 24–48 hours."
+  chips={['24–48 hr prep turnaround', 'Central-US location', 'Owner-operated']}
+  callout={{
+    title: 'Amazon no longer preps your inventory for you',
+    body: 'Amazon discontinued its FBA prep and item-labeling services in the U.S. for shipments created on or after January 1, 2026. Every unit now has to arrive already labeled and prepped to spec — which is exactly what we do every day.',
+  }}
+  includedTitle="What’s included"
+  included={included}
+  steps={steps}
+  faqs={faqs}
+  preselect="Marketplace / FBA Prep"
+/>

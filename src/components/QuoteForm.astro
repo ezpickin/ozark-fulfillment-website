@@ -1,4 +1,10 @@
 ---
+interface Props {
+  /** A service label (must match one in the list below) to pre-check, e.g. on a service page. */
+  preselect?: string;
+}
+const { preselect } = Astro.props;
+
 const services = [
   'Receiving & Shipping',
   'Storage',
@@ -62,7 +68,7 @@ const volumes = [
           {
             services.map((s) => (
               <label class="check">
-                <input type="checkbox" name="services" value={s} />
+                <input type="checkbox" name="services" value={s} checked={s === preselect} />
                 {s}
               </label>
             ))
@@ -238,6 +244,8 @@ const volumes = [
     const chosen = data.getAll('services').join(', ');
     data.delete('services');
     data.append('services', chosen || 'None selected');
+    // which page the visitor submitted from (e.g. /amazon-fba-prep/) — shows up in the lead email
+    data.append('submitted_from', window.location.pathname);
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {

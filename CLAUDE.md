@@ -11,6 +11,7 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 ## Stack & architecture
 
 - **Astro 5** static site. Three pages: the single scrolling home page (`src/pages/index.astro`), a Privacy Policy (`src/pages/privacy.astro`), and a post-submit confirmation page (`src/pages/thanks.astro` — noindexed via Layout's `noindex` prop, excluded from the sitemap, not linked anywhere).
+- **Service pages** (for national search): `/amazon-fba-prep/`, `/walmart-wfs-prep/`, `/ecommerce-fulfillment/`, `/climate-controlled-storage/`. Each is a thin page file holding its own copy (included / steps / FAQs arrays) rendered by the shared `src/components/ServicePage.astro` template (hero, Stats, FAQ, related links, Service + BreadcrumbList JSON-LD, and the quote form with the matching service pre-checked). The list of service pages lives in `src/data/servicePages.ts` — add new pages there so the footer, home-page cards and related links pick them up.
 - **Header/Footer nav links use `/#section`** (not bare `#section`) so they work from every page; on the home page they still scroll in place without a reload.
 - `src/layouts/Layout.astro` — shared `<head>` (meta, OpenGraph, LocalBusiness JSON-LD). Accepts optional `title`/`description` props (home page uses defaults; privacy page overrides them). `canonical` and `og:url` are computed per page from `Astro.url` (e.g. `/privacy/`) — never hardcode them.
 - **SEO plumbing:** `@astrojs/sitemap` (pinned 3.6.x — 3.7+ targets zod 4/Astro 6) generates `sitemap-index.xml` + `sitemap-0.xml` at build; `public/robots.txt` points to it. New pages are picked up automatically.
@@ -21,7 +22,7 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 - **Stats strip** (`Stats.astro`): 4 tiles — 65,000 sq ft total · 9,000 sq ft climate-controlled · Same-Day (fulfillment by 12 PM CT) · 250,000+ units/yr. (A previous "99% order accuracy" tile was removed — a precise, below-industry-standard number that invited scrutiny.)
 - **About** (`About.astro`): copy sourced from the company's LinkedIn profile.
 - **Footer** (`Footer.astro`): address, phone, email, business hours (Mon–Fri 8:00 AM–4:30 PM CT), LinkedIn + Facebook icon links, and a Privacy Policy link.
-- **Quote form** (`QuoteForm.astro`): posts to Web3Forms → trevor@ozarkfulfillment.com. Live access key `b1771689-1b3b-457b-9176-e8cd5458f9fb` is set in the `<script>` (`WEB3FORMS_ACCESS_KEY`). Honeypot spam field `botcheck`. Verified working (submissions land in the inbox). On success the form redirects to `/thanks/`, so **`/thanks/` page views in Cloudflare = successful submissions** — compare against Web3Forms emails to catch delivery failures.
+- **Quote form** (`QuoteForm.astro`): posts to Web3Forms → trevor@ozarkfulfillment.com. Live access key `b1771689-1b3b-457b-9176-e8cd5458f9fb` is set in the `<script>` (`WEB3FORMS_ACCESS_KEY`). Honeypot spam field `botcheck`. Verified working (submissions land in the inbox). Each submission also includes `submitted_from` (the page path, e.g. `/amazon-fba-prep/`) so lead emails show which page converted. `QuoteForm` takes an optional `preselect` prop (a label from its services list). On success the form redirects to `/thanks/`, so **`/thanks/` page views in Cloudflare = successful submissions** — compare against Web3Forms emails to catch delivery failures.
 
 ## Hosting & deployment
 
@@ -35,6 +36,11 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 ## Analytics
 
 - **Cloudflare Web Analytics** (cookieless, privacy-friendly) beacon is in `Layout.astro` before `</body>`, so it loads on every page. Data is private to the owner's Cloudflare dashboard. Localhost visits are NOT counted — only the live domain reports.
+
+## Marketing
+
+- `marketing/directory-listings.md` — paste-ready listing copy (tagline, short/medium/long descriptions, services, key facts) and the directory checklist (Fulfill.com, Racklify, Clutch, Amazon SPN, …). Keep it in sync with site claims.
+- Key insight from the Nov 2026 audit: Google Business Profile traffic is ~81% driver direction requests; local search can't reach national e-commerce brands. Leads must come from 3PL directories, marketplace provider networks, national-intent service pages, and referrals.
 
 ## Possible future enhancements (discussed, not yet done)
 

@@ -2,6 +2,13 @@
 
 A running log of decisions and gotchas, newest first.
 
+## 2026-11-05 — Service pages & directory copy
+
+- **Google Business Profile ≠ lead source for a national 3PL.** Of 246 profile interactions (Jun–Nov), 200 were direction requests (drivers), 41 website clicks, 5 calls; search terms were the street address and brand name. Local ranking is proximity-based, so brands in other states never see the profile. Keep it accurate (photos, reviews) for credibility only.
+- **Built four national-intent service pages** from claims already on the site — no new numbers. Deliberately left out: climate-control temperature ranges, minimums, pricing, carriers, hazmat/food — unconfirmed.
+- **Amazon ended U.S. FBA prep & item labeling for shipments created on/after Jan 1, 2026** (Seller Central announcement, widely reported). Used as the hook on `/amazon-fba-prep/`.
+- `astro check` prompts to install `@astrojs/check` interactively and hangs in CI-like shells — use `npm run build` + browser checks instead.
+
 ## 2026-11-05 — Lead audit, sitemap & canonical fix
 
 - **No leads ≠ broken form.** Audit found the Web3Forms → Gmail pipeline intact (only 2 submissions ever: launch test + one spam bot, both delivered). The real issue is traffic: ~280 visits in 3.5 months, ~4 from Google. Form notifications land in Gmail's Promotions/Updates tabs — filter them to Primary.
