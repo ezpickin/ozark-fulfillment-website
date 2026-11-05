@@ -39,6 +39,8 @@ Check monthly which directory actually sends traffic before paying for upgrades.
 Directories commonly ask for these. I did **not** guess them — fill in the real answers and keep
 this list handy:
 
+- **Integrations — update everywhere after the WMS switch.** Until then only Shopify is a direct
+  integration; don't list Amazon/TikTok Shop/Walmart as integrations on any directory yet.
 - Year founded: `________`
 - Number of employees: `________`
 - Minimum order volume / minimum monthly spend (or "no minimum"): `________`
@@ -71,9 +73,9 @@ Ozark Fulfillment is an owner-operated third-party logistics (3PL) provider in H
 
 Our 65,000 sq ft facility includes 9,000 sq ft of climate-controlled space for temperature-sensitive products. We receive parcel, LTL, full-truckload and floor-loaded 20′ and 40′ container freight, and inbound inventory is unloaded, counted and put away within 48 hours, with any discrepancies reported the same day.
 
-For marketplace sellers, we prep inventory to Amazon FBA and Walmart WFS requirements — FNSKU and item labeling, polybagging, bubble wrap, bundling, kitting, case prep and carton forwarding — with normal turnaround of 24–48 hours. Since Amazon discontinued its own U.S. prep and labeling services in January 2026, inventory has to arrive prepped; that's our daily work.
+For marketplace sellers, we're full-service: we can create your Amazon and Walmart shipments or work from the ones you create, and we prep inventory to Amazon FBA and Walmart WFS requirements — FNSKU and item labeling, polybagging, bubble wrap, bundling, kitting, case prep and carton forwarding — with normal turnaround of 24–48 hours. Since Amazon discontinued its own U.S. prep and labeling services in January 2026, inventory has to arrive prepped; that's our daily work.
 
-For direct-to-consumer brands, orders flow straight from Shopify, TikTok Shop, Amazon Seller Central and Walmart Marketplace to our floor through an AI-integrated warehouse management system with real-time inventory. Orders received by 12:00 PM CT ship the same day, and our south-central Missouri location reaches most of the country by ground in 2–3 days.
+For direct-to-consumer brands, Shopify orders flow straight to our floor through a direct integration, with Amazon, TikTok Shop and Walmart integrations coming soon with our AI-integrated warehouse management system. Orders received by 12:00 PM CT ship the same day, and our south-central Missouri location reaches most of the country by ground in 2–3 days.
 
 We also handle B2B and wholesale orders, custom packaging and value-added projects. Billing is transparent: every task is itemized on your invoice, and you pay only for the storage space you use. We've shipped 250,000+ units a year and are growing.
 
@@ -105,8 +107,8 @@ We also handle B2B and wholesale orders, custom packaging and value-added projec
 | Receiving / putaway | Within 48 hours; discrepancies reported same day |
 | Annual volume | 250,000+ units shipped per year |
 | Ground transit | 2–3 days to most of the U.S. |
-| Software | AI-integrated warehouse management system, real-time inventory |
-| Integrations | Amazon Seller Central, Shopify, TikTok Shop, Walmart Marketplace, + many others |
+| Software | Warehouse management system with real-time inventory (AI-integrated WMS from the upgrade) |
+| Integrations | Shopify (direct, today). Amazon Seller Central, TikTok Shop, Walmart Marketplace — coming soon with WMS upgrade; until then, ask how we handle those orders |
 | Hours | Mon–Fri, 8:00 AM – 4:30 PM CT |
 | Contact | trevor@ozarkfulfillment.com · (417) 453-1005 |
 
@@ -115,7 +117,7 @@ E-commerce brands selling on Amazon, Walmart, Shopify and TikTok Shop that want 
 
 ### Why choose us (bullet field)
 - Owner-operated: you talk directly to the people handling your product
-- Amazon FBA + Walmart WFS prep in 24–48 hours
+- Full-service Amazon FBA + Walmart WFS prep in 24–48 hours — we can create the shipments for you
 - Same-day shipping on orders by 12 PM CT
 - Central-U.S. location: 2–3 day ground to most of the country, without coastal prices
 - 9,000 sq ft climate-controlled space

@@ -39,6 +39,10 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 
 ## Marketing
 
+- **Integration claims (as of Nov 2026):** only **Shopify** is a direct integration. Amazon Seller Central, TikTok Shop and Walmart Marketplace integrations arrive with the WMS switch (planned January 2027) — site copy says "coming soon". **After go-live, update** `Integrations.astro`, `ecommerce-fulfillment.astro` and `marketing/directory-listings.md`. Seller-fulfilled Walmart orders today: client sends packing slip + shipping label.
+- **FBA/WFS prep is full-service:** Ozark can create the Amazon/Walmart shipment or work from one the client creates.
+- Small storage-only clients are accepted but not ideal unless high volume — don't market to "a few pallets".
+
 - `marketing/directory-listings.md` — paste-ready listing copy (tagline, short/medium/long descriptions, services, key facts) and the directory checklist (Fulfill.com, Racklify, Clutch, Amazon SPN, …). Keep it in sync with site claims.
 - Key insight from the Nov 2026 audit: Google Business Profile traffic is ~81% driver direction requests; local search can't reach national e-commerce brands. Leads must come from 3PL directories, marketplace provider networks, national-intent service pages, and referrals.
 

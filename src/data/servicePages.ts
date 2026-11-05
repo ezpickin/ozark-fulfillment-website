@@ -4,7 +4,7 @@
 export const servicePages = [
   { slug: 'amazon-fba-prep', name: 'Amazon FBA Prep' },
   { slug: 'walmart-wfs-prep', name: 'Walmart WFS Prep' },
-  { slug: 'ecommerce-fulfillment', name: 'Shopify & TikTok Shop Fulfillment' },
+  { slug: 'ecommerce-fulfillment', name: 'Shopify & E-commerce Fulfillment' },
   { slug: 'climate-controlled-storage', name: 'Climate-Controlled Storage' },
 ] as const;
 
