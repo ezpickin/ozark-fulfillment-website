@@ -43,6 +43,7 @@ Marketing website for Ozark Fulfillment, a 3PL warehouse in Houston, MO. Owner: 
 
 ## Marketing
 
+- **Audience priority (owner, Nov 2026): Shopify and TikTok Shop brands first**, Amazon/Walmart prep second. Lead with Shopify/TikTok Shop in new copy; the home H1 is "E-commerce Fulfillment & Amazon FBA Prep from the Center of the U.S."
 - **Integration claims (as of Nov 2026):** only **Shopify** is a direct integration. Amazon Seller Central, TikTok Shop and Walmart Marketplace integrations arrive with the WMS switch (planned January 2027) — site copy says "coming soon". **After go-live, update** `Integrations.astro`, `ecommerce-fulfillment.astro` and `marketing/directory-listings.md`. Seller-fulfilled Walmart orders (client sends packing slip + label) are possible but the owner chose **not** to advertise them.
 - **Real-time inventory and the "AI-integrated WMS" wording are accurate today** — leave them as is.
 - **FBA/WFS prep is full-service:** Ozark can create the Amazon/Walmart shipment or work from one the client creates.

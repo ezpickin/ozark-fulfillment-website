@@ -11,7 +11,9 @@ A running log of decisions and gotchas, newest first.
 - **FAQs weren't marked up** — `<details>` only. Added `FAQPage` JSON-LD from the same array, plus hours / social links / `@id` on the LocalBusiness record.
 - **GitHub Pages serves `/404.html` automatically** — `src/pages/404.astro` is all it takes; the sitemap integration skips it.
 - After a `git pull` that adds a dependency, run `npm install` before `npm run dev` — the dev server exits immediately with "Cannot find module" otherwise.
-- **Remaining gaps the owner must fill:** photos, testimonials, pricing/minimums, directory signups, Search Console check. The home page title/H1 still target "Houston, MO" / "Heart of the Ozarks" rather than what brands search for — options drafted, awaiting a pick.
+- **Home title/H1 rewritten for national search.** Was "3PL Warehousing & Fulfillment in Houston, MO" / "…from the Heart of the Ozarks" (no terms a brand would search). Now "E-commerce Fulfillment & Amazon FBA Prep from the Center of the U.S." (owner picked this from three options).
+- **Target audience per the owner: Shopify and TikTok Shop brands first**, marketplace prep second. The hero sub-line and meta description lead with Shopify/TikTok Shop; keep that order in new copy. (TikTok Shop is still a "coming soon" *integration* — say we fulfill those orders, don't claim a direct integration until the WMS switch.)
+- **Remaining gaps the owner must fill:** photos, testimonials, pricing/minimums, directory signups, Search Console check.
 
 ## 2026-11-05 — Service pages & directory copy
 
