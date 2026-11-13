@@ -19,6 +19,9 @@ Then open http://localhost:4321.
 - **Privacy Policy** — `src/pages/privacy.astro` (served at `/privacy`).
 - **Service pages** — `amazon-fba-prep`, `walmart-wfs-prep`, `ecommerce-fulfillment`, `climate-controlled-storage` (in `src/pages/`). Copy lives in arrays at the top of each file; layout comes from `src/components/ServicePage.astro`.
 - **Thanks page** — `src/pages/thanks.astro`, shown after a successful quote request (not indexed).
+- **404 page** — `src/pages/404.astro`, shown for any address that doesn't exist.
+
+**Logo:** pages load small generated copies (`public/logo-128.webp`, `logo-640.webp`, `favicon.png`, `apple-touch-icon.png`). To change the logo, replace `public/logo.png` and run `node scripts/optimize-logo.mjs`.
 
 Each home-page section lives in its own file under `src/components/`:
 

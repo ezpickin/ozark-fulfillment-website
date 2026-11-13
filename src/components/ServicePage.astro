@@ -65,20 +65,18 @@ const jsonLd = [
     description,
     url: `${site}/${slug}/`,
     areaServed: { '@type': 'Country', name: 'United States' },
-    provider: {
-      '@type': 'LocalBusiness',
-      name: 'Ozark Fulfillment',
-      url: site,
-      telephone: '+1-417-453-1005',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '1475 S Sam Houston Blvd',
-        addressLocality: 'Houston',
-        addressRegion: 'MO',
-        postalCode: '65483',
-        addressCountry: 'US',
-      },
-    },
+    // Points at the full LocalBusiness record that Layout.astro puts on every page.
+    provider: { '@id': `${site}/#business` },
+  },
+  {
+    // Marks up the on-page FAQ so search engines and AI assistants can read the Q&As.
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   },
   {
     '@context': 'https://schema.org',

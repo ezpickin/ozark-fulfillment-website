@@ -18,7 +18,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonicalURL} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {noindex && <meta name="robots" content="noindex" />}
@@ -35,6 +36,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
       set:html={JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
+        // Stable id so other structured data (e.g. Service pages) can point at this record.
+        '@id': 'https://ozarkfulfillment.com/#business',
         name: 'Ozark Fulfillment',
         description:
           'Third-party logistics (3PL) warehouse offering receiving, storage, DTC fulfillment, marketplace prep, and value-added services.',
@@ -50,6 +53,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
           addressCountry: 'US',
         },
         image: 'https://ozarkfulfillment.com/logo.png',
+        logo: 'https://ozarkfulfillment.com/logo.png',
+        areaServed: { '@type': 'Country', name: 'United States' },
+        // Keep in sync with the hours shown in Footer.astro.
+        openingHoursSpecification: [
+          {
+            '@type': 'OpeningHoursSpecification',
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            opens: '08:00',
+            closes: '16:30',
+          },
+        ],
+        // Keep in sync with the social links in Footer.astro.
+        sameAs: [
+          'https://www.linkedin.com/company/ozark-fulfillment/',
+          'https://www.facebook.com/profile.php?id=61589692852709',
+        ],
       })}
     />
     <slot name="head" />
