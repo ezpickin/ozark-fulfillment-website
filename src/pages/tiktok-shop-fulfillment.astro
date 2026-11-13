@@ -1,0 +1,103 @@
+---
+import ServicePage from '../components/ServicePage.astro';
+
+// Page copy — edit freely. Keep claims to things we can stand behind (see LESSONS.md).
+// TikTok Shop is NOT a direct integration yet (arrives with the WMS switch) — this page
+// says we fulfill TikTok Shop orders, never that we integrate with TikTok Shop.
+const included = [
+  {
+    title: 'Same-day shipping',
+    body: 'Orders received by our 12:00 PM CT cutoff ship the same day — comfortably inside TikTok Shop’s dispatch window.',
+  },
+  {
+    title: 'Pick, pack & ship',
+    body: 'Every order is picked, packed carefully, and labeled by our own team, from single parcels to multi-item orders.',
+  },
+  {
+    title: 'Real-time inventory',
+    body: 'Our warehouse management system keeps stock levels and order status current, so you know what’s on hand before a video takes off.',
+  },
+  {
+    title: 'Bundles, kits & custom packaging',
+    body: 'Bundles, multi-packs, assortments, and custom packaging assembled here, so the offer in your video is the box that arrives.',
+  },
+  {
+    title: 'One inventory, every channel',
+    body: 'Run TikTok Shop alongside your Shopify store, Amazon FBA and Walmart WFS prep, and wholesale orders — all from the same warehouse.',
+  },
+  {
+    title: 'Fulfilled by TikTok (FBT) inbound',
+    body: 'Using TikTok’s own warehouses for part of your catalog? We can ship your inventory into FBT, so you keep backstock here and replenish as you need to.',
+  },
+];
+
+const steps = [
+  {
+    title: 'Send us your inventory',
+    body: 'Ship from your supplier by parcel, LTL, full truckload, or floor-loaded container (20′ or 40′). We unload, count, and put away within 48 hours.',
+  },
+  {
+    title: 'Get your orders to us',
+    body: 'Send us the shipping labels for your TikTok Shop orders, or give us access to your TikTok Shop account and we’ll print them ourselves. A direct integration is coming soon with our warehouse-system upgrade.',
+  },
+  {
+    title: 'We pick, pack, and ship',
+    body: 'Orders in by 12:00 PM CT ship the same day, packed by the people you talk to — not a ticket queue.',
+  },
+  {
+    title: 'Tracked and itemized',
+    body: 'Orders go out with tracking, and every task shows up itemized on your invoice.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'How fast do you ship TikTok Shop orders?',
+    a: 'Orders received by 12:00 PM Central Time ship the same business day. TikTok Shop expects orders to be dispatched within two business days, so same-day shipping keeps you well ahead of the deadline.',
+  },
+  {
+    q: 'Do you integrate directly with TikTok Shop?',
+    a: 'Not yet — a direct TikTok Shop integration is coming soon with our warehouse-system upgrade. Today you either send us the shipping labels for your orders or give us access to your TikTok Shop account so we can print them, and we pick, pack, and ship from there.',
+  },
+  {
+    q: 'Can you send inventory to Fulfilled by TikTok (FBT)?',
+    a: 'Yes. If you use TikTok’s own warehouses for some or all of your products, we can ship your inventory into FBT from our dock and hold your backstock here until you need to replenish.',
+  },
+  {
+    q: 'Can you fulfill my Shopify and marketplace orders from the same inventory?',
+    a: 'Yes. Direct-to-consumer orders, Amazon FBA and Walmart WFS prep, and B2B/wholesale shipments all run from one warehouse, with one point of contact.',
+  },
+  {
+    q: 'How fast do orders reach my customers?',
+    a: 'From south-central Missouri, ground service reaches most of the country in 2–3 days.',
+  },
+  {
+    q: 'Can you build bundles and kits for TikTok Shop offers?',
+    a: 'Yes. We assemble bundles, multi-packs, kits, and custom packaging in-house as a value-added service.',
+  },
+  {
+    q: 'How is TikTok Shop fulfillment priced?',
+    a: 'It depends on your order volume and products. Every task is itemized on your invoice — receiving, storage, pick and pack, and shipping — so you always know what you’re paying for. Request a quote below and we’ll reply within one business day.',
+  },
+];
+---
+
+<ServicePage
+  slug="tiktok-shop-fulfillment"
+  title="TikTok Shop Fulfillment 3PL — Ozark Fulfillment, Missouri"
+  description="TikTok Shop order fulfillment and FBT inbound from a central-US 3PL: same-day shipping on orders by 12 PM CT, bundles and kitting. Get a quote."
+  serviceType="TikTok Shop order fulfillment"
+  eyebrow="TikTok Shop Fulfillment · Houston, Missouri"
+  h1="TikTok Shop Order Fulfillment"
+  lede="Your TikTok Shop orders are picked, packed, and shipped from our central-US warehouse — the same day when they come in by our 12:00 PM CT cutoff, so your shop stays ahead of TikTok’s dispatch deadlines."
+  chips={['Same-day by 12 PM CT', '2–3 day ground to most of the U.S.', 'Owner-operated']}
+  callout={{
+    title: 'TikTok Shop grades your shop on shipping speed',
+    body: 'TikTok Shop expects orders to be dispatched within two business days and tracks every shop’s Late Dispatch Rate. Shops that ship late risk account-health penalties and limits on their orders. Orders that reach us by 12:00 PM CT ship the same day.',
+  }}
+  includedTitle="What’s included"
+  included={included}
+  steps={steps}
+  faqs={faqs}
+  preselect="DTC Fulfillment"
+/>

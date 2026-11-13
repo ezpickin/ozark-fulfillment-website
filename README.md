@@ -17,7 +17,7 @@ Then open http://localhost:4321.
 
 - **Home** — a single scrolling page (`src/pages/index.astro`) assembled from section components.
 - **Privacy Policy** — `src/pages/privacy.astro` (served at `/privacy`).
-- **Service pages** — `amazon-fba-prep`, `walmart-wfs-prep`, `ecommerce-fulfillment`, `climate-controlled-storage` (in `src/pages/`). Copy lives in arrays at the top of each file; layout comes from `src/components/ServicePage.astro`.
+- **Service pages** — `amazon-fba-prep`, `walmart-wfs-prep`, `ecommerce-fulfillment`, `tiktok-shop-fulfillment`, `climate-controlled-storage` (in `src/pages/`). Copy lives in arrays at the top of each file; layout comes from `src/components/ServicePage.astro`.
 - **Thanks page** — `src/pages/thanks.astro`, shown after a successful quote request (not indexed).
 - **404 page** — `src/pages/404.astro`, shown for any address that doesn't exist.
 
